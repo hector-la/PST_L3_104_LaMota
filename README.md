@@ -68,8 +68,8 @@ Explicación de cómo lo resolví: en `routes.py` añadí `GET /lecturas/promedi
 ## Hardware real (Parte 4)
 - Montaje con NodeMCU ESP8266, **DHT22 (AM2302)** en D1 y LED RGB de cátodo común en D5, D6 y D7.
 - El monitor serie (115200 baudios) mostró `HTTP 201` con el dispositivo `equipo01` y el campo `led` de la respuesta.
-- Estados del LED registrados en el monitor: rojo, azul y apagado. El verde se probó en Swagger (PUT y POST), pero no quedó capturado en el monitor.
-- El LED físico no encendió en mi montaje, aunque la API devolvía el color en el campo `led` y el firmware lo recibía (`HTTP 201`). No determiné la causa en la sesión (cableado, LED, placa o sensor).
+- Estados del LED registrados en el monitor: rojo, azul y apagado. El verde se probó en Swagger (PUT y POST) y se ve encendido en la fotografía, pero no quedó capturado en el monitor.
+- El LED RGB llegó a encenderse en verde (fotografía del montaje en el informe). Los estados rojo, azul y apagado los registré con el campo `led` de la respuesta de la API.
 - Las lecturas del sensor no son confiables (temperatura de 1.0 a 2.5 °C y humedad cercana a 24 %): el firmware declara `DHT11` y el sensor es un DHT22. Lo más probable es que baste declarar `DHT22` en `main.cpp`.
 
 ## Notas
